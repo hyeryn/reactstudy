@@ -13,11 +13,12 @@
         <script>
             var Component = React.createClass({
                 render: function() {
-                    return React.DOM.span(num, "hi my friend");
+                    return React.DOM.h1(null, "hi my friend");
                 }
             });
             ReactDOM.render(
-                React.createElement(Component),
+                //React.createElement(Component),
+                React.createElement("span",null,"hi everyone"),
                 document.getElementById("app")
             );
         </script>
