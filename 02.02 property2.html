@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title> property2 </title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script>
+        var Component = React.createClass({
+            propTypes: {
+                firstname: React.PropTypes.string.isRequired,
+                middlename: React.PropTypes.string,
+                familyname: React.PropTypes.string.isRequired,
+                address: React.PropTypes.string,
+            },
+
+            getDefaultProps: function(){
+                return {
+                    middlename:"ring ",
+                    address: "seoul"
+                };
+            },
+            render: function(){
+                return React.DOM.span(null, "my name is " + this.props.firstname + this.props.middlename 
+                + this.props.familyname + " / my address is " + this.props.address);
+            }
+        });
+
+        ReactDOM.render(
+            React.createElement(
+                Component,{
+                    firstname:"hye",
+                }),
+                document.getElementById("app")
+        );
+    </script>
+</body>
